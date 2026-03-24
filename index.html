@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Tabuada</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <h1>Gerador de Tabuada</h1>
+
+    <input type="number" id="numero" placeholder="Digite um número">
+    <button onclick="gerarTabuada()">Gerar</button>
+
+    <div id="resultado"></div>
+
+    <script>
+        function gerarTabuada() {
+            let num = document.getElementById("numero").value;
+            let resultado = document.getElementById("resultado");
+
+            if (num === "") {
+                resultado.innerHTML = "Por favor, digite um número.";
+                return;
+            }
+
+            let tabuada = "";
+            for (let i = 1; i <= 10; i++) {
+                tabuada += `${num} x ${i} = ${num * i} <br>`;
+            }
+
+            resultado.innerHTML = tabuada;
+        }
+    </script>
+
+</body>
+</html>
